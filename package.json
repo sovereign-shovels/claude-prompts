@@ -1,0 +1,26 @@
+{
+  "name": "claude-prompts",
+  "version": "0.1.0",
+  "description": "One canonical prompt library. Author once, sync into Claude Projects, Cursor, AGENTS.md.",
+  "type": "module",
+  "bin": {
+    "claude-prompts": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "commander": "^12",
+    "yaml": "^2",
+    "gray-matter": "^4"
+  },
+  "devDependencies": {
+    "typescript": "^5.4",
+    "@types/node": "^20"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
