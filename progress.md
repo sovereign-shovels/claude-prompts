@@ -61,3 +61,4 @@ What we're monitoring (from PRD-v1):
 Adapter maintenance burden becoming overwhelming as destination tools change formats.
 
 Status: not triggered.
+- 2026-05-10 — hardened against local Ollama — all CLI paths verified, compile+tests green

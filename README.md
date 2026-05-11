@@ -8,6 +8,21 @@
 
 ---
 
+## Architecture
+
+```
+┌─────────────────┐         ┌─────────────────┐
+│  Prompt library │────────▶│   .cursorrules  │
+│  (markdown +    │         │   (Cursor)      │
+│   YAML front-   │────────▶├─────────────────┤
+│   matter)       │         │   AGENTS.md     │
+│                 │────────▶│   (Claude)      │
+│  ~/.config/     │         ├─────────────────┤
+│  claude-prompts/│         │  Cline rules    │
+│  library/       │         │  (planned v0.5) │
+└─────────────────┘         └─────────────────┘
+```
+
 ## What this is
 
 Power users maintain prompts across Claude Projects, Cursor rules (.cursorrules), Cline rules, AGENTS.md, Continue config, Aider conventions, ChatGPT custom instructions, and more. Each tool wants its own format. Updates drift. The same prompt exists in five places, slightly different.
@@ -85,6 +100,22 @@ claude-prompts sync
 # Generates .cursorrules and AGENTS.md in current directory
 
 claude-prompts sync --target .cursorrules --cwd ~/my-project
+```
+
+**Demo output:**
+```
+$ claude-prompts init
+Initialized claude-prompts.
+Library: ~/.config/claude-prompts/library
+Config:  ~/.config/claude-prompts/config.json
+
+$ claude-prompts add coding-style --title "Coding Style" \
+  --content "Always use explicit types. Prefer const over let."
+Added prompt 'coding-style'.
+
+$ claude-prompts sync
+Synced 2 prompt(s) to .cursorrules
+Synced 2 prompt(s) to AGENTS.md
 ```
 
 ### Prompt format
